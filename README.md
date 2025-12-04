@@ -22,3 +22,12 @@ We created a custom ROS2 node (`camera_node.py`) that:
 
 Screenshot:
 ![Stage 2](docs/stage2_camera_node_screenshot.png)
+
+## Stage 3 – Mouse-based interaction
+
+We extended `camera_node.py` to:
+- handle left mouse button clicks in the camera window,
+- compare the click position with the vertical middle of the image,
+- log a decision:
+  - click above center → FORWARD
+  - click below center → BACKWARD
