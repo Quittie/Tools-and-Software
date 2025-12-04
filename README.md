@@ -9,6 +9,8 @@ We connected a USB camera and verified the video stream using ROS2:
 
 Screenshot:
 
+https://github.com/Quittie/Tools-and-Software/raw/refs/heads/main/ETAP%201%20PHOTO
+
 
 ## Stage 2 – Custom ROS2 Camera Node
 
