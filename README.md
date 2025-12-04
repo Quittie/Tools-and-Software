@@ -9,8 +9,6 @@ We connected a USB camera and verified the video stream using ROS2:
 
 Screenshot:
 
-![Camera Stream](docs/stage1_camera_screenshot.png)
-
 
 ## Stage 2 – Custom ROS2 Camera Node
 
