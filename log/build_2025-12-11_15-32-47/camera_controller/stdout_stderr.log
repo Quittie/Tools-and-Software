@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/camera_controller/camera_controller.egg-info/PKG-INFO
+writing dependency_links to ../../build/camera_controller/camera_controller.egg-info/dependency_links.txt
+writing entry points to ../../build/camera_controller/camera_controller.egg-info/entry_points.txt
+writing requirements to ../../build/camera_controller/camera_controller.egg-info/requires.txt
+writing top-level names to ../../build/camera_controller/camera_controller.egg-info/top_level.txt
+reading manifest file '../../build/camera_controller/camera_controller.egg-info/SOURCES.txt'
+writing manifest file '../../build/camera_controller/camera_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+copying camera_controller/camera_node.py -> /home/student/camera_project/build/camera_controller/build/lib/camera_controller
+running install
+running install_lib
+copying /home/student/camera_project/build/camera_controller/build/lib/camera_controller/camera_node.py -> /home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller
+byte-compiling /home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller/camera_node.py to camera_node.cpython-310.pyc
+  File "/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller/camera_node.py", line 64
+    cv2.putText(frame, self.current_label,_
+               ^
+SyntaxError: '(' was never closed
+
+running install_data
+running install_egg_info
+removing '/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/camera_controller/camera_controller.egg-info to /home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing camera_node script to /home/student/camera_project/install/camera_controller/lib/camera_controller
+writing list of installed files to '/home/student/camera_project/build/camera_controller/install.log'

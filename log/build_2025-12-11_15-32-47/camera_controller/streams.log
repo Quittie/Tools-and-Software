@@ -1,0 +1,29 @@
+[0.790s] Invoking command in '/home/student/camera_project/src/camera_controller': PYTHONPATH=/home/student/camera_project/build/camera_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_controller build --build-base /home/student/camera_project/build/camera_controller/build install --record /home/student/camera_project/build/camera_controller/install.log --single-version-externally-managed install_data
+[1.022s] running egg_info
+[1.022s] writing ../../build/camera_controller/camera_controller.egg-info/PKG-INFO
+[1.023s] writing dependency_links to ../../build/camera_controller/camera_controller.egg-info/dependency_links.txt
+[1.023s] writing entry points to ../../build/camera_controller/camera_controller.egg-info/entry_points.txt
+[1.023s] writing requirements to ../../build/camera_controller/camera_controller.egg-info/requires.txt
+[1.023s] writing top-level names to ../../build/camera_controller/camera_controller.egg-info/top_level.txt
+[1.025s] reading manifest file '../../build/camera_controller/camera_controller.egg-info/SOURCES.txt'
+[1.026s] writing manifest file '../../build/camera_controller/camera_controller.egg-info/SOURCES.txt'
+[1.027s] running build
+[1.027s] running build_py
+[1.027s] copying camera_controller/camera_node.py -> /home/student/camera_project/build/camera_controller/build/lib/camera_controller
+[1.027s] running install
+[1.028s] running install_lib
+[1.028s] copying /home/student/camera_project/build/camera_controller/build/lib/camera_controller/camera_node.py -> /home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller
+[1.029s] byte-compiling /home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller/camera_node.py to camera_node.cpython-310.pyc
+[1.030s]   File "/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller/camera_node.py", line 64
+[1.030s]     cv2.putText(frame, self.current_label,_
+[1.030s]                ^
+[1.030s] SyntaxError: '(' was never closed
+[1.030s] 
+[1.030s] running install_data
+[1.030s] running install_egg_info
+[1.031s] removing '/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.032s] Copying ../../build/camera_controller/camera_controller.egg-info to /home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller-0.0.0-py3.10.egg-info
+[1.033s] running install_scripts
+[1.052s] Installing camera_node script to /home/student/camera_project/install/camera_controller/lib/camera_controller
+[1.052s] writing list of installed files to '/home/student/camera_project/build/camera_controller/install.log'
+[1.072s] Invoked command in '/home/student/camera_project/src/camera_controller' returned '0': PYTHONPATH=/home/student/camera_project/build/camera_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_controller build --build-base /home/student/camera_project/build/camera_controller/build install --record /home/student/camera_project/build/camera_controller/install.log --single-version-externally-managed install_data

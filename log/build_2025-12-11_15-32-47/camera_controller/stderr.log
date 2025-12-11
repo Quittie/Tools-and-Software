@@ -1,0 +1,5 @@
+  File "/home/student/camera_project/install/camera_controller/lib/python3.10/site-packages/camera_controller/camera_node.py", line 64
+    cv2.putText(frame, self.current_label,_
+               ^
+SyntaxError: '(' was never closed
+
