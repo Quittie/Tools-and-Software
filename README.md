@@ -45,3 +45,20 @@ We extended `camera_node.py` to:
   - publikuje komendy Twist na `/turtle1/cmd_vel`, przez co żółw rusza do przodu / cofa się.
 - Dowód działania: screeny w `docs/` (kamera + turtlesim + logi node’a).
 
+## Stage 5 – Automatic launch (+0.5)
+
+In this stage we prepared an automatic startup of the whole system using a ROS 2 launch file and a simple shell script.
+
+The script:
+- ustawia poprawnie zmienną `ROS_DOMAIN_ID=0`,
+- ładuje środowisko ROS 2 Humble,
+- ładuje nasz workspace `camera_project`,
+- uruchamia launch file `camera_turtle.launch.py`, który startuje:
+  - driver kamery (`usb_cam_node_exe`),
+  - nasz node `camera_node`,
+  - symulator robota `turtlesim_node`.
+
+Thanks to this, the whole demo can be started with a **single command**:
+
+```bash
+./run_camera_project.sh
