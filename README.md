@@ -31,3 +31,17 @@ We extended `camera_node.py` to:
 - log a decision:
   - click above center → FORWARD
   - click below center → BACKWARD
+
+## Stage 4 – Robot control (turtlesim)
+
+- Robot: `turtlesim_node`
+- Topic sterujący: `/turtle1/cmd_vel` (`geometry_msgs/Twist`)
+- Nasz node `camera_node.py`:
+  - subskrybuje `/image_raw`,
+  - obsługuje kliknięcia myszy w oknie kamery,
+  - decyzja:
+    - klik powyżej środka → `FORWARD` → `linear.x = 1.0`
+    - klik poniżej środka → `BACKWARD` → `linear.x = -1.0`
+  - publikuje komendy Twist na `/turtle1/cmd_vel`, przez co żółw rusza do przodu / cofa się.
+- Dowód działania: screeny w `docs/` (kamera + turtlesim + logi node’a).
+
