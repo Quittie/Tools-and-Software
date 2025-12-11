@@ -3,3 +3,8 @@ install/
 log/
 latest*
 
+build/
+install/
+log/
+latest*
+
