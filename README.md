@@ -62,3 +62,34 @@ Thanks to this, the whole demo can be started with a **single command**:
 
 ```bash
 ./run_camera_project.sh
+
+---------------------------------------------------
+
+
+Stage 6 – ArUco-based robot control (+0.5)
+
+As an extension of the mouse-based interface, we implemented a vision-based robot control mode using ArUco markers.
+
+Camera input:
+
+image stream provided on /image_raw.
+
+ArUco detection:
+
+implemented using OpenCV ArUco module (DICT_4X4_50),
+
+the center of the detected marker is computed based on its corner coordinates.
+
+Control logic implemented in camera_node.py:
+
+if the center of the ArUco marker is above the vertical center of the image → FORWARD → linear.x = 1.0,
+
+if the center of the ArUco marker is below the vertical center of the image → BACKWARD → linear.x = -1.0,
+
+if no marker is detected → robot stops (linear.x = 0.0).
+
+Velocity commands (geometry_msgs/Twist) are published on /turtle1/cmd_vel, enabling control of the robot in the turtlesim environment.
+
+This stage demonstrates an alternative human–robot interaction method based solely on visual feedback, without the use of mouse input.
+
+Proof of operation: screenshots in docs/ (ArUco marker visible in camera view, robot motion in turtlesim, node logs).
