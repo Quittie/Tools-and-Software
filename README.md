@@ -1,15 +1,15 @@
 ## Stage 1 — Camera Setup Complete
 
-We connected a USB camera and verified the video stream using ROS2:
+We connected a USB camera and verified the ROS 2 video stream.
 
-- Installed `usb_cam` package
+- Installed `usb_cam`
 - Installed `rqt_image_view`
-- Confirmed the driver publishes `/image_raw`
-- Preview visible in `rqt_image_view`
+- Verified that the camera driver publishes `/image_raw`
+- Confirmed the live preview in `rqt_image_view`
 
-Screenshot:
+**Screenshot (Stage 1):**  
+![Stage 1 — usb_cam + rqt_image_view](stage1_camera_setup.png)
 
-https://github.com/Quittie/Tools-and-Software/raw/refs/heads/main/ETAP%201%20PHOTO
 
 
 ## Stage 2 – Custom ROS2 Camera Node
