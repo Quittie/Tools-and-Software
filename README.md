@@ -8,7 +8,7 @@ We connected a USB camera and verified the ROS 2 video stream.
 - Confirmed the live preview in `rqt_image_view`
 
 **Screenshot (Stage 1):**  
-![Stage 1 — usb_cam + rqt_image_view](stage1_camera_setup.png)
+![Stage 1 — usb_cam + rqt_image_view](photos/stage1_camera_setup.png)
 
 
 
@@ -22,7 +22,7 @@ We implemented a custom ROS 2 node (`camera_node.py`) that:
 - operates in real time.
 
 **Screenshot (Stage 2):**  
-![Stage 2 — custom camera node](stage2_camera_node.png)
+![Stage 2 — custom camera node](photos/stage2_camera_node.png)
 
 ## Stage 3 — Mouse-based interaction
 
@@ -38,10 +38,10 @@ Functionality:
 **Screenshots (Stage 3):**
 
 *Click above image center — FORWARD*  
-![Stage 3 — mouse forward](stage3_mouse_forward.png)
+![Stage 3 — mouse forward](photos/stage3_mouse_forward.png)
 
 *Click below image center — BACKWARD*  
-![Stage 3 — mouse backward](stage3_mouse_backward.png)
+![Stage 3 — mouse backward](photos/stage3_mouse_backward.png)
 
 
 ## Stage 4 — Robot control (turtlesim)
@@ -61,10 +61,10 @@ In this stage we connected the camera-based decision logic with robot control in
 **Screenshots (Stage 4):**
 
 *FORWARD (linear.x > 0)*  
-![Stage 4 — turtlesim forward](stage4_turtlesim_forward.png)
+![Stage 4 — turtlesim forward](photos/stage4_turtlesim_forward.png)
 
 *BACKWARD (linear.x < 0)*  
-![Stage 4 — turtlesim backward](stage4_turtlesim_backward.png)
+![Stage 4 — turtlesim backward](photos/stage4_turtlesim_backward.png)
 
 ## Stage 5 – Automatic launch (+0.5)
 
@@ -83,7 +83,7 @@ Thanks to this, the whole demo can be started with a **single command**:
 `./run_camera_project.sh`
 
 **Screenshot (Stage 5):**  
-![Stage 5 — automatic launch](stage5_auto_launch.png)
+![Stage 5 — automatic launch](photos/stage5_auto_launch.png)
 
 ## Stage 6 – ArUco-based robot control (+0.5)
 
@@ -102,13 +102,13 @@ Velocity commands (`geometry_msgs/Twist`) are published on `/turtle1/cmd_vel`, e
 **Screenshots (Stage 6):**
 
 *Marker detected above image center — FORWARD*  
-![Stage 6 — ArUco forward](stage6_aruco_forward.png)
+![Stage 6 — ArUco forward](photos/stage6_aruco_forward.png)
 
 *Marker detected below image center — BACKWARD*  
-![Stage 6 — ArUco backward](stage6_aruco_backward.png)
+![Stage 6 — ArUco backward](photos/stage6_aruco_backward.png)
 
 *No marker detected — STOP*  
-![Stage 6 — ArUco not found](stage6_aruco_not_found.png)
+![Stage 6 — ArUco not found](photos/stage6_aruco_not_found.png)
 
 ## Stage 7 – Dockerized application (+0.5)
 
@@ -144,4 +144,4 @@ This setup launches the complete system automatically inside the container, incl
 Both mouse-based control and ArUco marker control work correctly inside the container.
 
 **Screenshot (Stage 7):**  
-![Stage 7 — Dockerized application](stage7_docker_run.png)
+![Stage 7 — Dockerized application](photos/stage7_docker_run.png)
