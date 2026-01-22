@@ -83,10 +83,8 @@ Thanks to this, the whole demo can be started with a **single command**:
 `./run_camera_project.sh`
 
 **Screenshot (Stage 5):**  
-![Stage 5 — automatic launch](stage5_*)
+![Stage 5 — automatic launch](stage5_auto_launch.png)
 
-
-```
 ## Stage 6 – ArUco-based robot control (+0.5)
 
 As an extension of the mouse-based interface, we implemented a vision-based robot control mode using ArUco markers.
