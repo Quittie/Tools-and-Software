@@ -87,16 +87,29 @@ Proof of operation: screenshots in docs/ (ArUCo marker visible in camera view, r
 
 ## Stage 7 – Dockerized application (+0.5)
 
-As an additional extension, the entire ROS 2 application was containerized using Docker, allowing the system to be run without local installation of ROS 2 and its dependencies.
+As an additional extension, the entire ROS 2 application was containerized using Docker, allowing the system to be executed without local installation of ROS 2 and project dependencies. The Docker image is built from the root of the repository using the following command:
 
-The Docker setup:
-- uses a ROS 2 Humble desktop base image,
-- installs all required dependencies (`usb_cam`, `cv_bridge`, `OpenCV`, `turtlesim`),
-- builds the project workspace inside the container,
-- automatically launches the full system using the existing ROS 2 launch file.
-
-### Build
-From the root of the repository:
-```bash
 docker build -t camera_project:humble .
+
+To run the application inside the container with access to the camera and graphical interface, GUI access must be enabled first:
+
+xhost +local:root
+
+The container is then started with:
+
+docker run --rm -it \
+--net=host \
+--device=/dev/video0 \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+camera_project:humble
+
+After finishing the demonstration, GUI access is revoked using:
+
+xhost -local:root
+
+This setup launches the complete system automatically inside Docker, including the camera driver, custom control node, and turtlesim. Both mouse-based control and ArUco marker control work correctly inside the container.
+
+Proof of operation: screenshots in docs/ (Docker container running, camera view, turtlesim window).
+
 
