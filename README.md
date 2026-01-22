@@ -84,3 +84,19 @@ Velocity commands (geometry_msgs/Twist) are published on /turtle1/cmd_vel, enabl
 This stage demonstrates an alternative human–robot interaction method based solely on visual feedback, without the use of mouse input.
 
 Proof of operation: screenshots in docs/ (ArUCo marker visible in camera view, robot motion in turtlesim, node logs).
+
+## Stage 7 – Dockerized application (+0.5)
+
+As an additional extension, the entire ROS 2 application was containerized using Docker, allowing the system to be run without local installation of ROS 2 and its dependencies.
+
+The Docker setup:
+- uses a ROS 2 Humble desktop base image,
+- installs all required dependencies (`usb_cam`, `cv_bridge`, `OpenCV`, `turtlesim`),
+- builds the project workspace inside the container,
+- automatically launches the full system using the existing ROS 2 launch file.
+
+### Build
+From the root of the repository:
+```bash
+docker build -t camera_project:humble .
+
