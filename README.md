@@ -66,24 +66,25 @@ In this stage we connected the camera-based decision logic with robot control in
 *BACKWARD (linear.x < 0)*  
 ![Stage 4 — turtlesim backward](stage4_turtlesim_backward.png)
 
-
 ## Stage 5 – Automatic launch (+0.5)
 
 In this stage we prepared an automatic startup of the whole system using a ROS 2 launch file and a simple shell script.
 
 The script:
-- ustawia poprawnie zmienną `ROS_DOMAIN_ID=0`,
-- ładuje środowisko ROS 2 Humble,
-- ładuje nasz workspace `camera_project`,
-- uruchamia launch file `camera_turtle.launch.py`, który startuje:
-  - driver kamery (`usb_cam_node_exe`),
-  - nasz node `camera_node`,
-  - symulator robota `turtlesim_node`.
+- sets the required environment variable `ROS_DOMAIN_ID=0`,
+- sources the ROS 2 Humble environment,
+- sources the project workspace,
+- launches `camera_turtle.launch.py`, which starts:
+  - the USB camera driver (`usb_cam_node_exe`),
+  - the custom control node `camera_node`,
+  - the `turtlesim_node`.
 
-Thanks to this, the whole demo can be started with a **single command**:
+Thanks to this, the whole demo can be started with a **single command**:  
+`./run_camera_project.sh`
 
-```bash
-./run_camera_project.sh
+**Screenshot (Stage 5):**  
+![Stage 5 — automatic launch](stage5_*)
+
 
 ```
 ## Stage 6 – ArUco-based robot control (+0.5)
