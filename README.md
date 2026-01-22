@@ -1,5 +1,7 @@
 Detailed setup and run instructions are available in `instructions.pdf`.
 
+This project was made by **Martyna Rydczak** and **Piotr Trusiewicz** 
+
 ## Stage 1 — Camera Setup Complete
 
 We connected a USB camera and verified the ROS 2 video stream.
