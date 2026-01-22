@@ -24,15 +24,25 @@ We implemented a custom ROS 2 node (`camera_node.py`) that:
 **Screenshot (Stage 2):**  
 ![Stage 2 — custom camera node](stage2_camera_node.png)
 
+## Stage 3 — Mouse-based interaction
 
-## Stage 3 – Mouse-based interaction
+We extended `camera_node.py` to support mouse-based interaction in the camera window.
 
-We extended `camera_node.py` to:
-- handle left mouse button clicks in the camera window,
-- compare the click position with the vertical middle of the image,
-- log a decision:
-  - click above center → FORWARD
-  - click below center → BACKWARD
+Functionality:
+- left mouse button clicks are captured in the OpenCV window,
+- the click position is compared with the vertical center of the image,
+- a control decision is generated:
+  - click above the image center → **FORWARD**
+  - click below the image center → **BACKWARD**
+
+**Screenshots (Stage 3):**
+
+*Click above image center — FORWARD*  
+![Stage 3 — mouse forward](stage3_mouse_forward.png)
+
+*Click below image center — BACKWARD*  
+![Stage 3 — mouse backward](stage3_mouse_backward.png)
+
 
 ## Stage 4 – Robot control (turtlesim)
 
