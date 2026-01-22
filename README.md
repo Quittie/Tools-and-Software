@@ -110,32 +110,38 @@ Velocity commands (`geometry_msgs/Twist`) are published on `/turtle1/cmd_vel`, e
 *No marker detected — STOP*  
 ![Stage 6 — ArUco not found](stage6_aruco_not_found.png)
 
-
 ## Stage 7 – Dockerized application (+0.5)
 
-As an additional extension, the entire ROS 2 application was containerized using Docker, allowing the system to be executed without local installation of ROS 2 and project dependencies. The Docker image is built from the root of the repository using the following command:
+As an additional extension, the entire ROS 2 application was containerized using Docker.
+This allows the system to be executed without a local installation of ROS 2 and project dependencies.
 
-docker build -t camera_project:humble .
+The Docker image is built from the root of the repository:
 
-To run the application inside the container with access to the camera and graphical interface, GUI access must be enabled first:
+`docker build -t camera_project:humble .`
 
-xhost +local:root
+To allow access to the graphical interface, GUI forwarding must be enabled:
+
+`xhost +local:root`
 
 The container is then started with:
 
-docker run --rm -it \
+`docker run --rm -it \
 --net=host \
 --device=/dev/video0 \
 -e DISPLAY=$DISPLAY \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
-camera_project:humble
+camera_project:humble`
 
 After finishing the demonstration, GUI access is revoked using:
 
-xhost -local:root
+`xhost -local:root`
 
-This setup launches the complete system automatically inside Docker, including the camera driver, custom control node, and turtlesim. Both mouse-based control and ArUco marker control work correctly inside the container.
+This setup launches the complete system automatically inside the container, including:
+- the USB camera driver,
+- the custom control node,
+- the `turtlesim_node`.
 
-Proof of operation: screenshots in docs/ (Docker container running, camera view, turtlesim window).
+Both mouse-based control and ArUco marker control work correctly inside the container.
 
-
+**Screenshot (Stage 7):**  
+![Stage 7 — Dockerized application](stage7_docker_run.png)
