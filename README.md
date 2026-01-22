@@ -44,18 +44,28 @@ Functionality:
 ![Stage 3 — mouse backward](stage3_mouse_backward.png)
 
 
-## Stage 4 – Robot control (turtlesim)
+## Stage 4 — Robot control (turtlesim)
+
+In this stage we connected the camera-based decision logic with robot control in `turtlesim`.
 
 - Robot: `turtlesim_node`
-- Topic sterujący: `/turtle1/cmd_vel` (`geometry_msgs/Twist`)
-- Nasz node `camera_node.py`:
-  - subskrybuje `/image_raw`,
-  - obsługuje kliknięcia myszy w oknie kamery,
-  - decyzja:
-    - klik powyżej środka → `FORWARD` → `linear.x = 1.0`
-    - klik poniżej środka → `BACKWARD` → `linear.x = -1.0`
-  - publikuje komendy Twist na `/turtle1/cmd_vel`, przez co żółw rusza do przodu / cofa się.
-- Dowód działania: screeny w `docs/` (kamera + turtlesim + logi node’a).
+- Control topic: `/turtle1/cmd_vel` (`geometry_msgs/Twist`)
+- Our node `camera_node.py`:
+  - subscribes to `/image_raw`,
+  - processes mouse clicks in the camera window,
+  - generates a decision:
+    - click above image center → **FORWARD** → `linear.x = 1.0`
+    - click below image center → **BACKWARD** → `linear.x = -1.0`
+  - publishes `Twist` commands to `/turtle1/cmd_vel`, which makes the turtle move forward / backward.
+
+**Screenshots (Stage 4):**
+
+*FORWARD (linear.x > 0)*  
+![Stage 4 — turtlesim forward](stage4_turtlesim_forward.png)
+
+*BACKWARD (linear.x < 0)*  
+![Stage 4 — turtlesim backward](stage4_turtlesim_backward.png)
+
 
 ## Stage 5 – Automatic launch (+0.5)
 
