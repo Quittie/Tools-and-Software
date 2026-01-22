@@ -87,24 +87,29 @@ Thanks to this, the whole demo can be started with a **single command**:
 
 ## Stage 6 – ArUco-based robot control (+0.5)
 
-As an extension of the mouse-based interface, we implemented a vision-based robot control mode using ArUco markers.
+As an extension of the mouse-based interaction, we implemented a vision-based robot control mode using ArUco markers.
 
-Camera input:
-image stream provided on /image_raw.
+The camera image stream is received from `/image_raw`.  
+ArUco detection is implemented using OpenCV (DICT_4X4_50).
 
-ArUco detection:
-implemented using OpenCV ArUco module (DICT_4X4_50),
-the center of the detected marker is computed based on its corner coordinates.
-Control logic implemented in camera_node.py:
-marker above the vertical center of the image → FORWARD → linear.x = 1.0,
-marker below the vertical center of the image → BACKWARD → linear.x = -1.0,
-no marker detected → robot stops (linear.x = 0.0).
+Control logic implemented in `camera_node.py`:
+- detected marker **above** the vertical center of the image → **FORWARD** → `linear.x = 1.0`
+- detected marker **below** the vertical center of the image → **BACKWARD** → `linear.x = -1.0`
+- **no marker detected** → robot stops → `linear.x = 0.0`
 
-Velocity commands (geometry_msgs/Twist) are published on /turtle1/cmd_vel, enabling control of the robot in turtlesim.
+Velocity commands (`geometry_msgs/Twist`) are published on `/turtle1/cmd_vel`, enabling camera-based control of the robot in `turtlesim`.
 
-This stage demonstrates an alternative human–robot interaction method based solely on visual feedback, without the use of mouse input.
+**Screenshots (Stage 6):**
 
-Proof of operation: screenshots in docs/ (ArUCo marker visible in camera view, robot motion in turtlesim, node logs).
+*Marker detected above image center — FORWARD*  
+![Stage 6 — ArUco forward](stage6_aruco_forward.png)
+
+*Marker detected below image center — BACKWARD*  
+![Stage 6 — ArUco backward](stage6_aruco_backward.png)
+
+*No marker detected — STOP*  
+![Stage 6 — ArUco not found](stage6_aruco_not_found.png)
+
 
 ## Stage 7 – Dockerized application (+0.5)
 
