@@ -12,16 +12,18 @@ We connected a USB camera and verified the ROS 2 video stream.
 
 
 
-## Stage 2 – Custom ROS2 Camera Node
+## Stage 2 — Custom ROS 2 Camera Node
 
-We created a custom ROS2 node (`camera_node.py`) that:
+We implemented a custom ROS 2 node (`camera_node.py`) that:
+
 - subscribes to `/image_raw`,
-- converts ROS Image → OpenCV using CvBridge,
-- displays live video in an OpenCV window,
-- runs in real-time.
+- converts `sensor_msgs/Image` to OpenCV format using `CvBridge`,
+- displays the live camera stream in an OpenCV window,
+- operates in real time.
 
-Screenshot:
-![Stage 2](docs/stage2_camera_node_screenshot.png)
+**Screenshot (Stage 2):**  
+![Stage 2 — custom camera node](stage2_camera_node.png)
+
 
 ## Stage 3 – Mouse-based interaction
 
